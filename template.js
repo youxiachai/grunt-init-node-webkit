@@ -73,7 +73,7 @@ exports.template = function (grunt, init, done) {
         // Generate package.json file.
         init.writePackageJSON('package.json', props);
         delete props.devDependencies;
-        props.window = {"title": props.name, "icon": "", "as_desktop": false, "resizable": false, "always-on-top": false, "fullscreen": false, "kiosk": false, "frame": true, "toolbar": false, "width": 900, "height": 620, "position": "center", "min_width": 900, "min_height": 620, "max_width": 900, "max_height": 620};
+        props.window = {"title": props.name, "icon": "", "as_desktop": false, "resizable": false, "always-on-top": false, "fullscreen": false, "kiosk": false, "frame": true, "toolbar": true, "width": 900, "height": 620, "position": "center", "min_width": 900, "min_height": 620, "max_width": 900, "max_height": 620};
         init.writePackageJSON('app.nw/package.json', props);
         // All done!
         done();
