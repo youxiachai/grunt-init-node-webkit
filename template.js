@@ -42,7 +42,7 @@ exports.template = function (grunt, init, done) {
         init.prompt('author_email'),
         init.prompt('author_url'),
         init.prompt('node_version', '>= 0.8.0'),
-        init.prompt('main','index.html'),
+        init.prompt('main', 'index.html'),
         {
             name: 'travis',
             message: 'Will this project be tested with Travis CI?',
@@ -73,6 +73,7 @@ exports.template = function (grunt, init, done) {
         // Generate package.json file.
         init.writePackageJSON('package.json', props);
         delete props.devDependencies;
+        props.window = {"title": props.name, "icon": "", "as_desktop": false, "resizable": false, "always-on-top": false, "fullscreen": false, "kiosk": false, "frame": true, "toolbar": false, "width": 900, "height": 620, "position": "center", "min_width": 900, "min_height": 620, "max_width": 900, "max_height": 620};
         init.writePackageJSON('app.nw/package.json', props);
         // All done!
         done();
